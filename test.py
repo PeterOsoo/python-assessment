@@ -19,8 +19,15 @@ def is_valid_series(series_value):
 
 
 # Load input data from JSON file
-with open("input.json", "r", encoding="utf-8") as file:
-    data = json.load(file)
+try:
+    with open("input.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+except FileNotFoundError:
+    print("Error: input.json file not found.")
+    exit(1)
+except json.JSONDecodeError:
+    print("Error: input.json is not a valid JSON file.")
+    exit(1)
 
 # Initialize the master data list
 master_data = []
