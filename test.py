@@ -108,4 +108,4 @@ for worker, rows in worker_data.items():
         writer.writerows(rows)
 
 
-print("Data processing complete! Check master.csv and individual worker files.")
+print("Data processing complete! Check master.csv and individual worker files. Script is working...")
